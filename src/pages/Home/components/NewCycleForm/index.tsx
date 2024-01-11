@@ -1,22 +1,13 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 
-import * as zod from 'zod'
 import { FormContainer, MinutesAmountInput, TaskInput } from './style'
 
-import { CyclesContext } from '../..'
 import { useFormContext } from 'react-hook-form'
+import { CyclesContext } from '../../../../contexts/CyclesContext'
 
 const NewCycleForm = () => {
   const { activeCycle } = useContext(CyclesContext)
   const { register } = useFormContext()
-
-  // const newCycleFormValidationSchema = zod.object({
-  //   task: zod.string(),
-  //   minutesAmount: zod
-  //     .number()
-  //     .min(1, 'O ciclo precisa ser de no mínimo 5 minutos')
-  //     .max(60, 'O ciclo precisa ser  de no máximo 60 minutos'),
-  // })
 
   return (
     <FormContainer>
