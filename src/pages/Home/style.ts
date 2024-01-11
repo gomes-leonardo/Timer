@@ -49,14 +49,20 @@ const BaseInput = styled.input`
 
 export const TaskInput = styled(BaseInput)`
   flex: 1;
-
+  text-align: center;
   &::-webkit-calendar-picker-indicator {
     display: none !important;
+  }
+
+  &::placeholder {
+    text-align: center;
   }
 `
 
 export const MinutesAmountInput = styled(BaseInput)`
   width: 4rem;
+  text-align: center;
+
   &::placeholder {
     text-align: center;
   }
@@ -88,11 +94,38 @@ export const Separator = styled.div`
 `
 
 export const StartCountdownButton = styled.button`
-  background: ${(props) => props.theme['green-500']};
+  background-color: ${(props) => props.theme['green-500']};
   color: ${(props) => props.theme['gray-100']};
 
   &:not(:disabled):hover {
     background: ${(props) => props.theme['green-700']};
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+
+  width: 100%;
+  padding: 1rem;
+
+  border: none;
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  font-weight: bolder;
+  cursor: pointer;
+`
+export const StopCountdownButton = styled.button`
+  background-color: ${(props) => props.theme['red-500']};
+  color: ${(props) => props.theme['gray-100']};
+
+  &:not(:disabled):hover {
+    background: ${(props) => props.theme['red-700']};
   }
 
   &:disabled {
